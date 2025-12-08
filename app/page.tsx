@@ -19,6 +19,10 @@ export default function Home() {
             <a href="#cases" className="hover:text-blue-600">
               案例分享
             </a>
+            {/* 🔹 新增石膏磚分頁連結 */}
+            <a href="/gypsum" className="hover:text-blue-600">
+              石膏磚工程
+            </a>
             <a href="#contact" className="hover:text-blue-600">
               聯絡我們
             </a>
