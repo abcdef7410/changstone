@@ -6,29 +6,30 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
       {/* Header */}
-      <header className="bg-white shadow sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-blue-700">常石工程科技</h1>
-          <nav className="space-x-6 text-lg hidden md:block">
-            <a href="#services" className="hover:text-blue-600">
-              服務項目
-            </a>
-            <a href="#about" className="hover:text-blue-600">
-              關於我們
-            </a>
-            <a href="#cases" className="hover:text-blue-600">
-              案例分享
-            </a>
-            {/* 🔹 新增石膏磚分頁連結 */}
-            <a href="/gypsum" className="hover:text-blue-600">
-              石膏磚工程
-            </a>
-            <a href="#contact" className="hover:text-blue-600">
-              聯絡我們
-            </a>
-          </nav>
-        </div>
-      </header>
+<header className="bg-white shadow sticky top-0 z-50">
+  <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 className="text-2xl font-bold text-blue-700">常石工程科技</h1>
+
+    <nav className="flex items-center gap-6 text-lg overflow-x-auto whitespace-nowrap md:overflow-visible md:whitespace-normal">
+      <a href="#services" className="hover:text-blue-600 shrink-0">
+        服務項目
+      </a>
+      <a href="#about" className="hover:text-blue-600 shrink-0">
+        關於我們
+      </a>
+      <a href="#cases" className="hover:text-blue-600 shrink-0">
+        案例分享
+      </a>
+      <a href="/gypsum" className="hover:text-blue-600 shrink-0">
+        石膏磚工程
+      </a>
+      <a href="#contact" className="hover:text-blue-600 shrink-0">
+        聯絡我們
+      </a>
+    </nav>
+  </div>
+</header>
+
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-700 to-blue-500 text-white py-24">

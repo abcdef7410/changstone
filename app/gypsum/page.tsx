@@ -283,10 +283,6 @@ export default function GypsumPage() {
                 若你正打算調整室內格局、增加房間或規劃辦公／商業空間隔間，
                 歡迎將平面圖或現場照片提供給我們，我們可以先給你初步建議與估價方向。
               </p>
-              <p className="text-sm opacity-90">
-                此處可直接沿用首頁的聯絡方式（電話、Email、LINE ID / QR Code），
-                或者嵌入專屬的石膏磚丈量預約表單。
-              </p>
             </div>
           </section>
         </div>
