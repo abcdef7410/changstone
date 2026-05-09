@@ -148,13 +148,13 @@ export default function Home() {
               <strong>技師：</strong>常惟綱
             </p>
             <p>
-              <strong>Email：</strong>abcdef741@gmail.com
+              <strong>Email：</strong>changstonetech@gmail.com
             </p>
             <p>
               <strong>電話：</strong>0988-157-517
             </p>
             <p>
-              <strong>line：</strong>abcdef7410
+              <strong>line：</strong>@245jhftl
             </p>
             <p>
               <strong>服務區域：</strong>台北 / 新北（可視案件需求全台服務）
