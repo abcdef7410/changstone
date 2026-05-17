@@ -206,7 +206,6 @@ export default function Home() {
             <p><strong>公司：</strong>常石工程科技有限公司</p>
             <p><strong>Email：</strong>changstonetech@gmail.com</p>
             <p><strong>電話：</strong>0988-157-517</p>
-            <p><strong>LINE：</strong>@245jhftl</p>
             <p><strong>服務區域：</strong>台北 / 新北為主</p>
           </div>
         </div>
