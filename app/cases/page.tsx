@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 
 const civilCases = [
   {
-    title: "林口合正欣永震滯洪池工程",
+    title: "土木工程施工案例",
     category: "土木工程",
     href: "/detention-basin",
     image:
-      "/images/detension/林口合正欣永震滯洪池/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg",
+      "/images/detension/civil-project-01/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg",
     summary:
       "基地排水、模板收尾、鋼筋綁紮、排水管線與混凝土澆置施工紀錄。",
     tags: ["基地排水", "鋼筋模板", "混凝土澆置"],

@@ -34,17 +34,17 @@ const process = [
 
 const detentionImages = [
   {
-    src: "/images/detension/林口合正欣永震滯洪池/20260530/LINE_ALBUM_2026530灌漿，灑水養護_260531_9.jpg",
+    src: "/images/detension/civil-project-01/20260530/LINE_ALBUM_2026530灌漿，灑水養護_260531_9.jpg",
     alt: "土木工程灌漿與養護施工照片",
     label: "灌漿養護",
   },
   {
-    src: "/images/detension/林口合正欣永震滯洪池/20260527/LINE_ALBUM_2016527頂板鋼筋綁紮_260531_11.jpg",
+    src: "/images/detension/civil-project-01/20260527/LINE_ALBUM_2016527頂板鋼筋綁紮_260531_11.jpg",
     alt: "土木工程頂板鋼筋綁紮施工照片",
     label: "鋼筋綁紮",
   },
   {
-    src: "/images/detension/林口合正欣永震滯洪池/20260518/S__18857997_0.jpg",
+    src: "/images/detension/civil-project-01/20260518/S__18857997_0.jpg",
     alt: "土木工程鋼筋模板施工照片",
     label: "鋼筋模板",
   },
@@ -113,7 +113,7 @@ export default function Home() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               <img
-                src="/images/detension/林口合正欣永震滯洪池/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg"
+                src="/images/detension/civil-project-01/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg"
                 alt="土木工程模板收尾與排水管施工照片"
                 className="h-80 w-full rounded-md object-cover sm:col-span-2"
               />
