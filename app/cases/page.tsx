@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
+import { hsinchuBiomedical } from "./hsinchu-biomedical/project";
 
 export const metadata: Metadata = {
   title: "工程案例 | 常石工程科技",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const civilCases = [
+  hsinchuBiomedical,
   {
     title: "土木工程施工案例",
     category: "土木工程",

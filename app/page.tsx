@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { hsinchuBiomedical } from "./cases/hsinchu-biomedical/project";
 
 export const metadata: Metadata = {
   title: "常石工程科技 | 土木工程與石膏磚工程",
@@ -170,6 +173,22 @@ export default function Home() {
               <p className="leading-8 text-slate-600">
                 案例依工程類型整理，包含土木工程與石膏磚工程，方便業主依需求查看實際施工紀錄。
               </p>
+              <Link
+                href={hsinchuBiomedical.href}
+                className="group mt-5 flex max-w-sm items-center gap-4 rounded-md border border-[#d9e2f1] bg-[#f7f9fc] p-3 hover:border-[#0b4fb3]"
+              >
+                <Image
+                  src={hsinchuBiomedical.image}
+                  alt=""
+                  width={96}
+                  height={72}
+                  className="h-[72px] w-24 shrink-0 rounded object-cover"
+                />
+                <span>
+                  <span className="block text-sm text-slate-600">新竹縣竹北市</span>
+                  <span className="mt-1 block font-semibold text-[#003b98] group-hover:underline">{hsinchuBiomedical.title} →</span>
+                </span>
+              </Link>
               <a
                 href="/cases"
                 className="mt-6 inline-flex rounded-full bg-[#0b4fb3] px-7 py-3 font-semibold text-white shadow-sm hover:bg-[#063f96]"
