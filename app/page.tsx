@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { hsinchuBiomedical } from "./cases/hsinchu-biomedical/project";
+import ProjectCards from "./cases/ProjectCards";
+import { projects } from "./cases/projects";
 
 export const metadata: Metadata = {
   title: "常石工程科技 | 土木工程與石膏磚工程",
@@ -33,24 +33,6 @@ const process = [
   ["02", "工程規劃", "整理施工項目、材料方式、工期節點與安全注意事項。"],
   ["03", "進場施作", "依現場條件調整工序，重視排水、結構與收邊品質。"],
   ["04", "完工交付", "整理現場、拍攝完工紀錄，提供後續維護建議。"],
-];
-
-const detentionImages = [
-  {
-    src: "/images/detension/civil-project-01/20260530/LINE_ALBUM_2026530灌漿，灑水養護_260531_9.jpg",
-    alt: "土木工程灌漿與養護施工照片",
-    label: "灌漿養護",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260527/LINE_ALBUM_2016527頂板鋼筋綁紮_260531_11.jpg",
-    alt: "土木工程頂板鋼筋綁紮施工照片",
-    label: "鋼筋綁紮",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260518/S__18857997_0.jpg",
-    alt: "土木工程鋼筋模板施工照片",
-    label: "鋼筋模板",
-  },
 ];
 
 export default function Home() {
@@ -163,50 +145,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#ffffff] py-16 md:py-20">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-            <div>
-              <p className="mb-2 font-semibold text-[#003b98]">工程案例</p>
-              <h2 className="mb-5 text-3xl font-bold md:text-4xl">
-                土木工程與石膏磚工程案例一次整理。
-              </h2>
-              <p className="leading-8 text-slate-600">
-                案例依工程類型整理，包含土木工程與石膏磚工程，方便業主依需求查看實際施工紀錄。
-              </p>
-              <Link
-                href={hsinchuBiomedical.href}
-                className="group mt-5 flex max-w-sm items-center gap-4 rounded-md border border-[#d9e2f1] bg-[#f7f9fc] p-3 hover:border-[#0b4fb3]"
-              >
-                <Image
-                  src={hsinchuBiomedical.image}
-                  alt=""
-                  width={96}
-                  height={72}
-                  className="h-[72px] w-24 shrink-0 rounded object-cover"
-                />
-                <span>
-                  <span className="block text-sm text-slate-600">新竹縣竹北市</span>
-                  <span className="mt-1 block font-semibold text-[#003b98] group-hover:underline">{hsinchuBiomedical.title} →</span>
-                </span>
-              </Link>
-              <a
-                href="/cases"
-                className="mt-6 inline-flex rounded-full bg-[#0b4fb3] px-7 py-3 font-semibold text-white shadow-sm hover:bg-[#063f96]"
-              >
-                查看全部案例
-              </a>
+        <section className="bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="mb-6 flex flex-wrap items-baseline justify-between gap-4">
+              <h2 className="text-3xl font-bold md:text-4xl">工程案例</h2>
+              <Link href="/cases" className="font-semibold text-[#003b98] underline underline-offset-4">查看全部案例</Link>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {detentionImages.map((image) => (
-                <figure key={image.src} className="overflow-hidden rounded-md border border-[#d9e2f1] bg-white">
-                  <img src={image.src} alt={image.alt} className="h-56 w-full object-cover" />
-                  <figcaption className="p-4">
-                    <div className="font-semibold text-slate-950">{image.label}</div>
-                    <p className="mt-1 text-sm text-slate-600">{image.alt}</p>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <ProjectCards projects={projects.slice(0, 3)} />
           </div>
         </section>
 

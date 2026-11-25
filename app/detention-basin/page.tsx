@@ -1,74 +1,13 @@
 /* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import type { Metadata } from "next";
+import ProjectCards from "../cases/ProjectCards";
+import { projects } from "../cases/projects";
 
 export const metadata: Metadata = {
   title: "土木工程 | 常石工程科技",
   description:
-    "土木工程、基地排水、集水設施與現場施工案例展示，包含施工重點、流程、照片牆與聯絡諮詢。",
+    "常石工程科技提供基地排水、滯洪池與集水設施施工服務，附工程案例與聯絡方式。",
 };
-
-const gallery = [
-  {
-    src: "/images/detension/civil-project-01/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg",
-    alt: "土木工程模板收尾與排水管施工照片",
-    label: "模板收尾",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260530/LINE_ALBUM_2026530灌漿，灑水養護_260531_9.jpg",
-    alt: "土木工程灌漿與灑水養護施工照片",
-    label: "灌漿養護",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260527/LINE_ALBUM_2016527頂板鋼筋綁紮_260531_11.jpg",
-    alt: "土木工程頂板鋼筋綁紮施工照片",
-    label: "鋼筋綁紮",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260518/S__18857997_0.jpg",
-    alt: "土木工程鋼筋模板施工照片",
-    label: "鋼筋模板",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260518/S__18858004_0.jpg",
-    alt: "土木工程牆面模組立施工照片",
-    label: "牆面組立",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260520/LINE_ALBUM_2026520滯洪池灌底板_260531_13.jpg",
-    alt: "土木工程底板灌漿施工照片",
-    label: "底板灌漿",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260519/S__18907148_0.jpg",
-    alt: "土木工程基礎與側牆施作照片",
-    label: "基礎施作",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260518/S__18858007.jpg",
-    alt: "土木工程現場鋼筋與模板施工照片",
-    label: "鋼筋模板",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260518/S__18858000_0.jpg",
-    alt: "土木工程結構鋼筋細部照片",
-    label: "結構細部",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260512/S__18677769_0.jpg",
-    alt: "土木工程基地施工準備照片",
-    label: "施工準備",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260512/S__105463831.jpg",
-    alt: "土木工程前期整地施工照片",
-    label: "前期整地",
-  },
-  {
-    src: "/images/detension/civil-project-01/20260511/S__18645048_0.jpg",
-    alt: "土木工程基地現況照片",
-    label: "基地現況",
-  },
-];
 
 const highlights = [
   ["雨水滯留", "協助基地在豪雨時段降低瞬間排水負擔。"],
@@ -121,17 +60,17 @@ export default function DetentionBasinPage() {
                 土木工程・基地排水・雨水滯留
               </p>
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-                北部基地土木工程，從結構施作到排水配置完整紀錄。
+                基地排水與滯洪設施施工
               </h1>
               <p className="mb-8 text-lg leading-8 text-slate-600">
-                本案配合基地條件進行模板、鋼筋、排水管線與混凝土澆置作業，施工過程重視現場安全、結構品質與後續維護需求。
+                常石依基地地形與排水方向安排整地、池體結構及管線施工，並預留後續檢查與清淤的空間。
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#gallery"
                   className="inline-flex justify-center rounded-full bg-[#0b4fb3] px-8 py-3 font-semibold text-white shadow-sm hover:bg-[#063f96]"
                 >
-                  查看照片
+                  查看工程案例
                 </a>
                 <a
                   href="https://lin.ee/UqhmIYE"
@@ -143,23 +82,11 @@ export default function DetentionBasinPage() {
                 </a>
               </div>
             </div>
-            <div className="grid gap-4">
-              <img
-                src={gallery[0].src}
-                alt={gallery[0].alt}
-                className="h-[420px] w-full rounded-md object-cover"
-              />
-              <div className="grid grid-cols-3 gap-4">
-                {gallery.slice(1, 4).map((image) => (
-                  <img
-                    key={image.src}
-                    src={image.src}
-                    alt={image.alt}
-                    className="h-28 w-full rounded-md object-cover"
-                  />
-                ))}
-              </div>
-            </div>
+            <img
+              src="/images/detension/civil-project-01/20260528/LINE_ALBUM_2026528-29模板收尾-施作排水管_260531_20.jpg"
+              alt="基地排水工程的模板與管線施工現場"
+              className="h-auto w-full rounded-md"
+            />
           </div>
         </section>
 
@@ -182,35 +109,10 @@ export default function DetentionBasinPage() {
           </div>
         </section>
 
-        <section id="gallery" className="bg-[#ffffff] py-16 md:py-20">
+        <section id="gallery" className="scroll-mt-16 bg-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-5">
-            <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-              <div>
-                <p className="mb-2 font-semibold text-[#003b98]">照片紀錄</p>
-                <h2 className="text-3xl font-bold md:text-4xl">
-                  開挖、排水、邊坡、完工一次整理。
-                </h2>
-              </div>
-              <p className="max-w-xl leading-7 text-slate-600">
-                透過施工階段照片，呈現從前期整地、模板組立、鋼筋綁紮到灌漿養護的完整工程紀錄。
-              </p>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {gallery.map((image) => (
-                <figure key={image.src} className="overflow-hidden rounded-md border border-[#d9e2f1] bg-white">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="h-72 w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                  <figcaption className="p-4">
-                    <div className="font-semibold text-slate-950">{image.label}</div>
-                    <p className="mt-1 text-sm text-slate-600">{image.alt}</p>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">土木工程案例</h2>
+            <ProjectCards projects={projects.filter((project) => project.category === "土木工程")} />
           </div>
         </section>
 
