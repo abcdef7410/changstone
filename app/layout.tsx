@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
+import MobileContactBar from "./components/MobileContactBar";
+import { organization, pageMetadata, site } from "./lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +18,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "常石工程科技",
-  description: "石膏磚隔間、工程鑑定、土木修繕",
+  metadataBase: new URL(site.url),
+  ...pageMetadata("常石工程科技 | 土木工程與防潮石膏磚", "結合土木技師背景與現場施工經驗，提供土木工程、排水改善與防潮石膏磚隔間服務。", "/"),
+  applicationName: site.name,
+  icons: { apple: "/images/brand/apple-touch-icon.png" },
 };
+
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#003b98" };
 
 export default function RootLayout({
   children,
@@ -71,7 +79,11 @@ export default function RootLayout({
           ></iframe>
         </noscript>
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
+        <SiteHeader />
         {children}
+        <SiteFooter />
+        <MobileContactBar />
       </body>
     </html>
   );

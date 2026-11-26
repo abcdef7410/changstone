@@ -1,13 +1,15 @@
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
+import Image from "next/image";
+import ContactPanel from "../components/ContactPanel";
+import { pageMetadata } from "../lib/site";
 import type { Metadata } from "next";
 import ProjectCards from "../cases/ProjectCards";
 import { projects } from "../cases/projects";
 
-export const metadata: Metadata = {
-  title: "石膏磚隔間工程 | 常石工程科技",
-  description:
-    "常石工程科技提供室內石膏磚隔間施工服務，附基隆工程案例與聯絡方式。",
-};
+export const metadata: Metadata = pageMetadata(
+  "防潮石膏磚隔間工程 | 常石工程科技",
+  "常石工程科技提供住宅、商辦與廠辦防潮石膏磚隔間施工，附材料性能說明、聲學試驗依據與基隆施工案例。",
+  "/gypsum",
+);
 
 const advantages = [
   ["施工效率", "適合需要快速完成隔間、控制現場濕作與工期的空間。"],
@@ -17,34 +19,11 @@ const advantages = [
 ];
 
 export default function GypsumPage() {
-  const year = new Date().getFullYear();
 
   return (
-    <div className="min-h-screen bg-[#f7f9fc] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-[#d9e2f1] bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" className="text-lg font-bold text-[#0b3f9f] md:text-xl">
-            常石工程科技
-          </a>
-          <nav className="flex items-center gap-4 overflow-x-auto whitespace-nowrap text-sm text-slate-700 md:gap-6">
-            <a href="/" className="hover:text-[#003b98]">
-              首頁
-            </a>
-            <a href="/cases" className="hover:text-[#003b98]">
-              案例
-            </a>
-            <a href="/detention-basin" className="hover:text-[#003b98]">
-              土木工程
-            </a>
-            <span className="font-semibold text-[#003b98]">石膏磚工程</span>
-            <a href="#contact" className="hover:text-[#003b98]">
-              聯絡
-            </a>
-          </nav>
-        </div>
-      </header>
+    <div className="bg-[#f7f9fc] text-slate-900">
 
-      <main>
+      <main id="main-content">
         <section className="bg-gradient-to-br from-[#003b98] via-[#0757c2] to-[#0b4fb3] text-white">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[0.95fr_1.05fr] md:items-center md:py-20">
             <div>
@@ -52,7 +31,7 @@ export default function GypsumPage() {
                 石膏磚隔間・室內工程・案例展示
               </p>
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-                石膏磚隔間工程，兼顧施工效率與牆面品質。
+                防潮石膏磚隔間，從材料規格到施工品質。
               </h1>
               <p className="mb-8 text-lg leading-8 text-white">
                 適用於住宅、辦公室、廠辦與商業空間隔間，施工過程重視放樣、垂直度、牆面平整與收邊細節。
@@ -75,8 +54,9 @@ export default function GypsumPage() {
               </div>
             </div>
 
-            <img
+            <Image
               src="/images/gypsum/keelung/2026051509.jpg"
+              width={1477} height={1108} preload sizes="(max-width: 767px) calc(100vw - 40px), 600px"
               alt="石膏磚隔間完工牆面"
               className="h-auto w-full rounded-md"
             />
@@ -88,7 +68,7 @@ export default function GypsumPage() {
             <div className="mb-10 max-w-3xl">
               <p className="mb-2 font-semibold text-[#003b98]">工程特色</p>
               <h2 className="text-3xl font-bold md:text-4xl">
-                把客戶最在意的工期、平整度與完工狀態放在前面。
+                重視工期、牆面平整與收邊品質。
               </h2>
             </div>
             <div className="grid gap-5 md:grid-cols-4">
@@ -102,6 +82,30 @@ export default function GypsumPage() {
           </div>
         </section>
 
+        <section id="material-performance" aria-labelledby="performance-title" className="border-y border-[#d9e2f1] bg-blue-50/60 py-12 md:py-16">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="mb-2 font-semibold text-[#003b98]">材料與檢測依據</p>
+            <h2 id="performance-title" className="mb-6 text-3xl font-bold">以材料資料與施工條件確認隔間性能。</h2>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="rounded-md border border-[#d9e2f1] bg-white p-6">
+                <h3 className="text-xl font-bold">聲學試驗參考</h3>
+                <p className="my-4 text-3xl font-bold text-[#003b98]">Rw 40 dB</p>
+                <p className="text-base leading-7 text-slate-700">Rw(C;Ctr) = 40(-1;-5) dB。試驗單位為國立屏東科技大學綠建材技術服務中心聲學實驗室，報告編號 A-2604-02。</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600">上述為實驗室試件結果；現場隔音會受牆體組構、門窗、管線開孔及接縫影響，需依實際設計確認。</p>
+              </div>
+              <div className="rounded-md border border-[#d9e2f1] bg-white p-6">
+                <h3 className="mb-4 text-xl font-bold">選材與施工前確認</h3>
+                <ul className="list-disc space-y-3 pl-5 text-base leading-7 text-slate-700">
+                  <li>依空間用途確認磚體厚度、防潮需求及材料規格。</li>
+                  <li>防火、吊掛與特殊隔音需求，依對應材料文件及施作條件確認。</li>
+                  <li>放樣、牆面垂直度、門框、管線與接縫收邊納入現場檢查。</li>
+                </ul>
+                <a href="#contact" className="mt-5 inline-flex min-h-11 items-center font-semibold text-[#003b98] underline underline-offset-4">洽詢材料與送審資料</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="case-gallery" className="scroll-mt-16 bg-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-5">
             <h2 className="mb-6 text-3xl font-bold md:text-4xl">石膏磚工程案例</h2>
@@ -109,37 +113,9 @@ export default function GypsumPage() {
           </div>
         </section>
 
-        <section id="contact" className="bg-gradient-to-br from-[#003b98] via-[#0757c2] to-[#0b4fb3] py-16 text-white md:py-20">
-          <div className="mx-auto max-w-4xl px-5 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              需要石膏磚隔間估價或現場評估？
-            </h2>
-            <p className="mb-8 text-lg leading-8 text-white">
-              傳送空間照片、施作位置與大約尺寸，我們可以協助初步判斷施工方式。
-            </p>
-            <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              <a
-                href="https://lin.ee/UqhmIYE"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-white px-8 py-3 font-semibold text-[#003b98] shadow-sm hover:bg-blue-50"
-              >
-                LINE 諮詢
-              </a>
-              <a
-                href="tel:0988157517"
-                className="rounded-full border border-white bg-white px-8 py-3 font-semibold text-[#003b98] shadow-sm hover:bg-blue-50"
-              >
-                電話 0988-157-517
-              </a>
-            </div>
-          </div>
-        </section>
+        <ContactPanel title="需要防潮石膏磚隔間估價或材料資料？" />
       </main>
 
-      <footer className="bg-[#003b98] py-6 text-center text-sm text-white">
-        © {year} 常石工程科技有限公司. All rights reserved.
-      </footer>
     </div>
   );
 }

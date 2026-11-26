@@ -1,3 +1,5 @@
+import ContactPanel from "../../components/ContactPanel";
+import { pageMetadata } from "../../lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +22,7 @@ function getProject(slug: string) {
 
 export async function generateMetadata({ params }: CasePageProps): Promise<Metadata> {
   const project = getProject((await params).slug);
-  return { title: `${project.title} | 常石工程科技`, description: project.summary };
+  return pageMetadata(`${project.title} | 常石工程科技`, project.summary, `/cases/${project.slug}`);
 }
 
 export default async function CasePage({ params }: CasePageProps) {
@@ -28,18 +30,9 @@ export default async function CasePage({ params }: CasePageProps) {
   const photos = project.photos ?? [];
 
   return (
-    <div className="min-h-screen bg-[#f7f9fc] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-[#d9e2f1] bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
-          <Link href="/" className="shrink-0 text-lg font-bold text-[#0b3f9f] md:text-xl">常石工程科技</Link>
-          <nav aria-label="主選單" className="flex gap-4 whitespace-nowrap text-sm text-slate-700 md:gap-6">
-            <Link href="/cases" className="font-semibold text-[#003b98] hover:underline">工程案例</Link>
-            <Link href="/#contact" className="hover:text-[#003b98]">聯絡諮詢</Link>
-          </nav>
-        </div>
-      </header>
+    <div className="bg-[#f7f9fc] text-slate-900">
 
-      <main className="mx-auto max-w-5xl px-5 py-10 md:py-16">
+      <main id="main-content" className="mx-auto max-w-5xl px-5 py-10 md:py-16">
         <p className="mb-3 text-sm font-semibold text-[#003b98]">
           {[project.location, project.category].filter(Boolean).join(" · ")}
         </p>
@@ -68,9 +61,7 @@ export default async function CasePage({ params }: CasePageProps) {
 
         <Link href="/cases" className="mt-8 inline-block font-semibold text-[#003b98] underline underline-offset-4">返回全部工程案例</Link>
       </main>
-      <footer className="bg-[#003b98] py-6 text-center text-sm text-white">
-        © {new Date().getFullYear()} 常石工程科技有限公司. All rights reserved.
-      </footer>
+      <ContactPanel title="詢問類似工程" description={`正在規劃與「${project.title}」相近的工程嗎？傳送位置、照片或圖說，讓我們協助確認需求與估價範圍。`} />
     </div>
   );
 }
